@@ -1,2 +1,2 @@
-web: gunicorn eventpay.wsgi --log-file -
+web: gunicorn stringmatch.wsgi --log-file -
 
