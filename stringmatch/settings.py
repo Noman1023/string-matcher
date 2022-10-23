@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-bri+r9m*vlbd!(jj=ylhbt_oyl!%cmme7ig^k(jgzd508xr!ss
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'string-matcher.herokuapp.com', 'www.string-matcher.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'string-matcher.herokuapp.com', 'www.string-matcher.herokuapp.com', 'docker-string.herokuapp.com', 'www.docker-string.herokuapp.com']
+
+CSRF_TRUSTED_ORIGINS = ["https://docker-string.herokuapp.com", "https://string-matcher.herokuapp.com"]
 
 
 # Application definition
