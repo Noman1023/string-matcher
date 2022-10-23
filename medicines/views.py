@@ -2,11 +2,13 @@ from django.conf import settings
 from django.shortcuts import render
 import csv
 
+from ratelimit.decorators import ratelimit
 
 from medicines.string_search import StringFinder
 
 
 # lists all the keys from the csv file
+@ratelimit(rate='5/m')
 def list_keys(request, *args, **kwargs):
     with open('dataset.csv') as csv_file:
         csv_reader = csv.DictReader(csv_file)
@@ -15,6 +17,7 @@ def list_keys(request, *args, **kwargs):
 
 
 # search for potential matches in the values from csv file
+@ratelimit(rate='5/m')
 def get_matches(request):
     with open(settings.CSV_FILENAME) as csv_file:
         key = request.POST.get('medicine')
