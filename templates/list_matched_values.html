@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <title>Meds keys</title>
+</head>
+<body>
+
+<div class="container">
+    <div style="margin-top: 100px">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Key</th>
+                <th scope="col">Values</th>
+                <th scope="col">Percentage</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if not matched_values %}
+                <tr>
+                    <td>
+                        {{key}}
+                    </td>
+                    <td>
+                        No records found
+                    </td>
+                    <td>
+                        -
+                    </td>
+                </tr>
+            {% endif %}
+            {% for result in matched_values %}
+            <tr>
+                {% if forloop.counter == 1 %}
+                    <td>
+                        {{key}}
+                    </td>
+                        {% else %}
+                    <td>
+                    </td>
+                {% endif %}
+
+                <td>{{ result.value }}</td>
+                <td>{{ result.percentage }}</td>
+            </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>

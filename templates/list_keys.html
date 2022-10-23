@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <title>Meds keys</title>
+</head>
+<body>
+
+<div class="container">
+    <div style="margin-top: 100px">
+        <form action=" {% url 'matches' %}"  method="POST">
+        {% csrf_token %}
+            <div class="form-group">
+                <label for="keys"><h4>Select a key</h4></label>
+                <select class="form-control" id="keys" name="medicine">
+                    {% for key in keys %}
+                    <option value="{{key}}">{{ key }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
