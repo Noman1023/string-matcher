@@ -2,7 +2,7 @@ from difflib import SequenceMatcher as sm
 
 
 class StringFinder:
-    """StringFinder is a class for comparing two strings and checking for the similarity for those strings.
+    """StringFinder is a class for comparing two strings and checking for the similarities within them.
     """
     def __init__(self, *args, **kwargs):
         self.key = kwargs.get('key')
